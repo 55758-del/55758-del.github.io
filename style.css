@@ -5,8 +5,9 @@ h1{
   background-repeat: no-repeat;
   background-position: center bottom;
   background-attachment: fixed;
-  padding: 100% 100px;
-  background-size: 100%;
+  width: 100%
+  padding: 100px;
+  background-size: 100px;
 }
 p {
   color: black;
