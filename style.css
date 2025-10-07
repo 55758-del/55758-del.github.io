@@ -4,7 +4,7 @@ h1{
   background-repeat: no-repeat;
   background-position: center bottom;
   background-attachment: fixed;
-  background-size: 300px 100px;
+  block-size: 200px;
 }
 p {
   color: black;
