@@ -4,10 +4,11 @@ h1{
   background-repeat: no-repeat;
   background-position: center bottom;
   background-attachment: fixed;
-  background-size: auto;
+  background-size: 300px 100px;
 }
 p {
   color: black;
   text-align: center;
+  line-height: 1.8;
 } 
 
