@@ -1,6 +1,7 @@
 h1{
   text-align: center;
   background-image: url("https://mail.google.com/mail/u/0?ui=2&ik=1017809c9b&attid=0.1&permmsgid=msg-a:r5887069974813021435&th=199befaa2769c0bd&view=att&disp=safe&realattid=199bef9cf34622f674f1&zw");
+  background-repeat: repeat-x;
 }
 p {
   color: black;
