@@ -15,29 +15,45 @@
 
 <nav>
 <ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#contact">Contact</a></li>
+<li><a href="#" onclick="showPage('home')">Home</a></li>
+<li><a href="#" onclick="showPage('about')">About</a></li>
+<li><a href="#" onclick="showPage('contact')">Contact</a></li>
 </ul>
 </nav>
 
 
-<main>
-<h2>About This Site</h2>
-<p>This is a simple starter website built using only HTML and CSS. It includes a header, navigation bar, main content section, and footer.</p>
-
-
-<h3>What You Can Learn</h3>
-<ul>
-<li>How to structure a basic web page with HTML</li>
-<li>How to style elements using CSS</li>
-<li>How to make a simple navigation bar</li>
-</ul>
+<main id="content">
+<h2>Welcome!</h2>
+<p>Click the links above to see different content here.</p>
 </main>
 
 
 <footer>
 <p>&copy; 2025 - George Harvey - html project</p>
 </footer>
+  <script>
+// Select the content area
+const content = document.getElementById('content');
+
+
+// Function to change text
+function showPage(page) {
+  if (page === 'home') {
+    content.innerHTML = `
+    <h2>Home</h2>
+    <p>Welcome to the homepage! This is where you can introduce your site.</p>`;
+  } 
+  else if (page === 'about') {
+  content.innerHTML = `
+  <h2>About</h2>
+  <p>This website was made to help you learn basic HTML, CSS, and JavaScript.</p>`;
+  } 
+  else if (page === 'contact') {
+  content.innerHTML = `
+  <h2>Contact</h2>
+  <p>You can reach me at <a href='mailto:example@email.com'>example@email.com</a>.</p>`;
+  }
+}
+</script>
 </body>
 </html>
