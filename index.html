@@ -21,9 +21,9 @@
 <li class="dropdown">
   <a href="javascript:void(0)" class="dropbtn">Photos</a>
   <div class="dropdown-content">
-    <a href="#" onclick="showPage('Edits')">Edits</a>
-    <a href="#" onclick="showPage('Photoshoot1')">Photoshoot1</a>
-    <a href="#" onclick="showPage('Photoshoot2')">Photoshoot2</a>
+    <a href="#" onclick="showPage('edits')">Edits</a>
+    <a href="#" onclick="showPage('photoshoot1')">Photoshoot1</a>
+    <a href="#" onclick="showPage('photoshoot2')">Photoshoot2</a>
   </div>
 </li>
 </ul>
@@ -58,6 +58,21 @@ function showPage(page) {
     content.innerHTML = `
     <h2>Contact</h2>
     <p>You can reach me at <a href='mailto:55758@farnborough.ac.uk'>55758@farnborough.ac.uk</a> if you have any questions or are interested in purchasing the photos.</p>`;
+  }
+  else if (page === 'edits') {
+    content.innerHTML = `
+    <h2>Contact</h2>
+    <p>These are my edits from across all my different shoots.</p>`;
+  }
+  else if (page === 'photoshoot1') {
+    content.innerHTML = `
+    <h2>Contact</h2>
+    <p>This is photoshoot 1.</p>`;
+  }
+  else if (page === 'photoshoot2') {
+    content.innerHTML = `
+    <h2>Contact</h2>
+    <p>This is photoshoot 2.</p>`;
   }
 }
 </script>
