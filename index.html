@@ -21,8 +21,8 @@
 <li class="dropdown">
   <a href="javascript:void(0)" class="dropbtn">Photos</a>
   <div class="dropdown-content">
-    <a href="#edits" onclick="showPage('edits')">Edits</a>
     <a href="#bestPhotos" onclick="showPage('bestPhotos')">Best Photos</a>
+    <a href="#edits" onclick="showPage('edits')">Edits</a>
   </div>
 </li>
 </ul>
@@ -61,7 +61,7 @@ function showPage(page) {
   else if (page === 'edits') {
   content.innerHTML = `
   <h2>Edits</h2>
-  <p>These are my edits from across all my different shoots.</p>
+  <p>These are my edits from across all my different shoots. - Photos still to be added</p>
   <section id="gallery">
     <h3>Photo Gallery</h3>
     <div class="gallery" id="gallery-container"></div>
