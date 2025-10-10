@@ -105,7 +105,11 @@ function showPage(page) {
         img.alt = imgName;
         gallery.appendChild(img);
       });
-    
+    })
+    .catch(error => {
+      console.error('Error loading images:', error);
+      document.getElementById('gallery-container').innerHTML = '<p>Could not load images.</p>';
+    });
   }
 }
 </script>
