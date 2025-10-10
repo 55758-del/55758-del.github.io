@@ -33,7 +33,7 @@ color: #333;
 }
 
 header {
-background-image: src = 'Photos/$RFQGU3N.JPG'; 
+background-image: url('https://github.com/55758-del/55758-del.github.io/blob/main/Photos/$RFQGU3N.JPG?raw=true'); 
 background-size: cover;
 background-position: center;
 color: white;
