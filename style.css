@@ -33,7 +33,7 @@ color: #333;
 }
 
 header {
-background-image: src('Photos/$RFQGU3N.JPG'); 
+background-image: src = 'Photos/$RFQGU3N.JPG'; 
 background-size: cover;
 background-position: center;
 color: white;
