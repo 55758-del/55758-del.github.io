@@ -21,7 +21,7 @@
 <li class="dropdown">
   <a href="javascript:void(0)" class="dropbtn">Photos</a>
   <div class="dropdown-content">
-    <a href="#bestPhotos" onclick="showPage('bestPhotos')">Best Photos</a>
+    <a href="#turkey" onclick="showPage('Turkey')">Turkey</a>
     <a href="#edits" onclick="showPage('edits')">Edits</a>
   </div>
 </li>
@@ -85,10 +85,10 @@ function showPage(page) {
     });
   }
 
-  else if (page === 'bestPhotos') {
+  else if (page === 'Turkey') {
   content.innerHTML = `
-  <h2>Best Photos</h2>
-  <p>These are some of the best photos I have taken.</p>
+  <h2>Turkey</h2>
+  <p>These are some of the photos I took in Turkey.</p>
   <section id="gallery">
     <h3>Photo Gallery</h3>
     <div class="gallery" id="gallery-container"></div>
