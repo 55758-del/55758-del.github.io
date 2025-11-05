@@ -1,123 +1,60 @@
-body {
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 0;
-background-color: #D9D9D9;
-color: #333;
+.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
 }
 
-#gallery {
-    max-width: 1000px;
-    margin: 40px auto;
-    text-align: center;
+.dark-mode header {
+  text-shadow: none;
+  color: #f1f1f1;
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-    padding: 10px;
+.dark-mode nav {
+  background-color: #222;
 }
 
-.gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.dark-mode nav li a,
+.dark-mode .dropbtn {
+  color: #f1f1f1;
 }
 
-.gallery img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.dark-mode nav li a:hover,
+.dark-mode .dropdown:hover .dropbtn {
+  background-color: #444;
+  color: #fff;
 }
 
-header {
-background-image: url("https://github.com/55758-del/55758-del.github.io/blob/main/Photos/Isle%20of%20White/photo21.JPG?raw=true");
-background-size: cover;
-background-position: center;
-color: white;
-text-align: center;
-padding: 4em 0;
-text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+.dark-mode main {
+  background-color: #1e1e1e;
+  color: #ddd;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
 }
 
-nav {
-background-color: #333;
+.dark-mode footer {
+  background-color: #222;
+  color: #f1f1f1;
 }
 
-
-nav ul {
-list-style-type: none;
-margin: 0;
-padding: 0;
-overflow: hidden;
+#mode-toggle {
+  background-color: rgba(255,255,255,0.7);
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
 }
 
-
-nav li {
-float: left;
+#mode-toggle:hover {
+  background-color: white;
 }
 
-
-nav li a, .dropbtn {
-display: block;
-color: white;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
+.dark-mode #mode-toggle {
+  background-color: rgba(0,0,0,0.6);
+  color: white;
 }
 
-
-nav li a:hover, .dropdown:hover .dropbtn {
-    background-color: white;
-    color: black;
-}
-
-nav li.dropdown {
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1;}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-main {
-padding: 20px;
-background-color: white;
-max-width: 1000px;
-margin: 20px auto;
-border-radius: 8px;
-box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-
-
-footer {
-text-align: center;
-padding: 10px;
-background-color: #333;
-color: white;
-position: fixed;
-width: 100%;
-bottom: 0;
+.dark-mode #mode-toggle:hover {
+  background-color: black;
 }
