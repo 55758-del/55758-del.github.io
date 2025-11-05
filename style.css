@@ -33,7 +33,7 @@ color: #333;
 }
 
 header {
-background-image: src = Photos/Isle of White/photo21.JPG;
+background-image: url("Photos/Isle of White/photo21.JPG");
 background-size: cover;
 background-position: center;
 color: white;
@@ -69,7 +69,7 @@ text-decoration: none;
 }
 
 
-nav li a:hover .dropdown:hover .dropbtn {
+nav li a:hover, .dropdown:hover .dropbtn {
   background-color: red;
 }
 
