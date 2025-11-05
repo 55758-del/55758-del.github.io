@@ -1,61 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My First Website</title>
-<link rel="stylesheet" href="style.css">
-</head>
 <body>
 <header>
-  <h1>George Harvey Photography Portfolio</h1>
-  <p>All my photos</p>
-  <button id="mode-toggle">Dark Mode</button>
+<h1>George Harvey Photography Portfolio</h1>
+<p>All my Photos</p>
+<p>All my photos</p>
 </header>
 
+
 <nav>
-  <ul>
-    <li><a href="#home" onclick="showPage('home')">Home</a></li>
-    <li class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn">Photos</a>
-      <div class="dropdown-content">
-        <a href="#turkey" onclick="showPage('Turkey')">Turkey</a>
-        <a href="#iOW" onclick="showPage('iOW')">Isle of White</a>
-      </div>
-    </li>
-    <li><a href="#about" onclick="showPage('about')">About</a></li>
-    <li><a href="#contact" onclick="showPage('contact')">Contact</a></li>
-  </ul>
+<ul>
+<li><a href="#home" onclick="showPage('home')">Home</a></li>
+<li class="dropdown">
+  <a href="javascript:void(0)" class="dropbtn">Photos</a>
+  <div class="dropdown-content">
+    <a href="#turkey" onclick="showPage('Turkey')">Turkey</a>
+    <a href="#iOW" onclick="showPage('iOW')">Isle of White</a>
+  </div>
+</li>
+<li><a href="#about" onclick="showPage('about')">About</a></li>
+<li><a href="#contact" onclick="showPage('contact')">Contact</a></li>
+</ul>
 </nav>
 
+
 <main id="content">
-  <h2>Welcome!</h2>
-  <p>Click the links above to see different content here.</p>
+<h2>Welcome!</h2>
+<p>Click the links above to see different content here.</p>
 </main>
 
-<footer>
-  <p>&copy; 2025 - George Harvey - HTML Project</p>
-</footer>
 
-<script>
+<footer>
+<p>&copy; 2025 - George Harvey - html project</p>
+</footer>
+  <script>
+
 const content = document.getElementById('content');
 
 function showPage(page) {
   if (page === 'home') {
     content.innerHTML = `
-      <h2>Home</h2>
-      <p>Welcome to the homepage! Here you can find the different sections that I have sorted my photoshoots into.</p>`;
-  } else if (page === 'about') {
+    <h2>Home</h2>
+    <p>Welcome to the homepage! Here you can find the different sections that I have sorted my photoshoots into.</p>`;
+  } 
+  else if (page === 'about') {
     content.innerHTML = `
-      <h2>About</h2>
-      <p>This website was made to store all my photography work.</p>`;
-const toggleButton = document.getElementById('mode-toggle');
-toggleButton.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  toggleButton.textContent = document.body.classList.contains('dark-mode')
-    ? 'Light Mode'
-    : 'Dark Mode';
-});
+    <h2>About</h2>
+    <p>This website was made to store all my photography work</p>`;
+  } 
+  else if (page === 'contact') {
+    content.innerHTML = `
+    <h2>Contact</h2>
+    <p>You can reach me at <a href='mailto:55758@farnborough.ac.uk'>55758@farnborough.ac.uk</a> if you have any questions or are interested in purchasing the photos.</p>`;
+  }
+  else if (page === 'iOW') {
+  content.innerHTML = `
+  <h2>Isle of White</h2>
+  <p>These are some of the photos I took in the Isle of White.</p>
+  <section id="gallery">
+    <h3>Photo Gallery</h3>
+    <div class="gallery" id="gallery-container"></div>
+  </section>
+  `;
+
+  fetch('Photos/Isle of White/images.json')
+    .then(response => response.json())
+    .then(data => {
+      const gallery = document.getElementById('gallery-container');
+      data.images.forEach(imgName => {
+        const img = document.createElement('img');
+        img.src = 'Photos/Isle of White/' + imgName;
+        img.alt = imgName;
+        gallery.appendChild(img);
+      });
+    })
+    .catch(error => {
+      console.error('Error loading images:', error);
+      document.getElementById('gallery-container').innerHTML = '<p>Could not load images.</p>';
+    });
+  }
+
+  else if (page === 'Turkey') {
+  content.innerHTML = `
+  <h2>Turkey</h2>
+  <p>These are some of the photos I took in Turkey.</p>
+  <section id="gallery">
+    <h3>Photo Gallery</h3>
+    <div class="gallery" id="gallery-container"></div>
+  </section>
+  `;
+
+  fetch('Photos/Best_Photos/images.json')
+    .then(response => response.json())
+    .then(data => {
+      const gallery = document.getElementById('gallery-container');
+      data.images.forEach(imgName => {
+        const img = document.createElement('img');
+        img.src = 'Photos/Best_Photos/' + imgName;
+        img.alt = imgName;
+        gallery.appendChild(img);
+      });
+    })
+    .catch(error => {
+      console.error('Error loading Images:', error);
+      document.getElementById('gallery-container').innerHTML = '<p>Could not load images.</p>';
+    });
+  }
+}
 </script>
 </body>
 </html>
