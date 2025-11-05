@@ -33,7 +33,7 @@ color: #333;
 }
 
 header {
-background-image: img.src = 'Photos/Isle of White/photo21.JPG';
+background-image: src = 'Photos/Isle of White/photo21.JPG';
 background-size: cover;
 background-position: center;
 color: white;
