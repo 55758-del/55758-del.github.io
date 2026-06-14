@@ -40,6 +40,7 @@
 <div id="lightbox">
   <span id="close-lightbox">&times;</span>
   <div class="image-container">
+    <button id="prev-btn">&#10094;</button>
     <img id="lightbox-img" src="" alt="">
     <div class="watermark">© George Harvey Photography</div>
   </div>
@@ -51,6 +52,8 @@ const toggleButton = document.getElementById('mode-toggle');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const closeLightbox = document.getElementById('close-lightbox');
+let currentImages = [];
+let currentIndex = 0;
   
 function showPage(page) {
   if (page === 'home') {
@@ -81,13 +84,14 @@ function showPage(page) {
       .then(response => response.json())
       .then(data => {
         const gallery = document.getElementById('gallery-container');
-        data.images.forEach(imgName => {
+        currentImages = [];
+        data.images.forEach((imgName, index) => {
           const img = document.createElement('img');
           img.src = 'Photos/Isle of White/' + imgName;
           img.alt = imgName;
+          currentImages.push(img.src);
           img.addEventListener('click', () => {
-            lightboxImg.src = img.src;
-            lightbox.style.display = 'flex';
+            openLightbox(index);
           });
           gallery.appendChild(img);
         });
@@ -110,13 +114,14 @@ function showPage(page) {
       .then(response => response.json())
       .then(data => {
         const gallery = document.getElementById('gallery-container');
-        data.images.forEach(imgName => {
+        currentImages = [];
+        data.images.forEach((imgName, index) => {
           const img = document.createElement('img');
-          img.src = 'Photos/Best_Photos/' + imgName;
+          img.src = 'Photos/Isle of White/' + imgName;
           img.alt = imgName;
+          currentImages.push(img.src);
           img.addEventListener('click', () => {
-            lightboxImg.src = img.src;
-            lightbox.style.display = 'flex';
+            openLightbox(index);
           });
           gallery.appendChild(img);
         });
@@ -175,7 +180,26 @@ document.addEventListener('dragstart', (e) => {
     e.preventDefault();
   }
 });
-  
+
+function openLightbox(index) {
+  currentIndex = index;
+  lightboxImg.src = currentImages[currentIndex];
+  lightbox.style.display = 'flex';
+}
+
+function showNext() {
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  lightboxImg.src = currentImages[currentIndex];
+}
+
+function showPrev() {
+  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+  lightboxImg.src = currentImages[currentIndex];
+}
+
+document.getElementById('next-btn').addEventListener('click', showNext);
+document.getElementById('prev-btn').addEventListener('click', showPrev);
+
 </script>
 
 </body>
