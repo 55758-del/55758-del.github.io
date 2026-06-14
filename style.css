@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: White;
+  background-color: #ffffff;
   color: #222;
 }
 
@@ -52,7 +52,7 @@ header {
 }
 
 nav {
-  background-color: #4a4a4a;
+  background-color: #5a5a5a;
 }
 
 nav ul {
@@ -130,7 +130,7 @@ main {
 }
 
 footer {
-  background-color: #333;
+  background-color: #2b2b2b;
   color: white;
   padding: 12px 20px;
   position: fixed;
@@ -166,7 +166,7 @@ footer p {
 }
 
 .dark-mode {
-  background-color: #0d0d0d;
+  background-color: #050505;
   color: #f5f5f5;
 }
 
@@ -175,7 +175,7 @@ footer p {
 }
 
 .dark-mode nav {
-  background-color: #111;
+  background-color: #0f0f0f;
 }
 
 .dark-mode nav li a,
@@ -193,10 +193,11 @@ footer p {
   background-color: #1a1a1a;
   color: #ddd;
   box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  border: 1px solid #333;
 }
 
 .dark-mode footer {
-  background-color: #111;
+  background-color: #000;
   color: #f1f1f1;
 }
 
