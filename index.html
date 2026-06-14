@@ -37,6 +37,14 @@
 <button id="mode-toggle">🌙</button>
 </footer>
 
+<div id="lightbox">
+  <span id="close-lightbox">&times;</span>
+  <div class="image-container">
+    <img id="lightbox-img" src="" alt="">
+    <div class="watermark">© George Harvey Photography</div>
+  </div>
+</div>
+  
 <script>
 const content = document.getElementById('content');
 const toggleButton = document.getElementById('mode-toggle');
@@ -157,12 +165,6 @@ lightboxImg.addEventListener('contextmenu', e => {
 });
   
 </script>
-<div id="lightbox">
-  <span id="close-lightbox">&times;</span>
-  <div class="image-container">
-    <img id="lightbox-img" src="" alt="">
-    <div class="watermark">© George Harvey Photography</div>
-  </div>
-</div>
+
 </body>
 </html>
