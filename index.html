@@ -39,9 +39,14 @@
 
 <div id="lightbox">
   <span id="close-lightbox">&times;</span>
+
   <div class="image-container">
     <button id="prev-btn">&#10094;</button>
+
     <img id="lightbox-img" src="" alt="">
+
+    <button id="next-btn">&#10095;</button>
+
     <div class="watermark">© George Harvey Photography</div>
   </div>
 </div>
@@ -117,7 +122,7 @@ function showPage(page) {
         currentImages = [];
         data.images.forEach((imgName, index) => {
           const img = document.createElement('img');
-          img.src = 'Photos/Isle of White/' + imgName;
+          img.src = 'Photos/Best_Photos/' + imgName;
           img.alt = imgName;
           currentImages.push(img.src);
           img.addEventListener('click', () => {
