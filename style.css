@@ -210,3 +210,55 @@ footer p {
 .dark-mode #mode-toggle:hover {
   background-color: black;
 }
+
+#lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+#lightbox-img {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 8px;
+}
+
+.watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-25deg);
+
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  opacity: 0.15;
+
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+#close-lightbox {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
