@@ -40,7 +40,10 @@
 <script>
 const content = document.getElementById('content');
 const toggleButton = document.getElementById('mode-toggle');
-
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeLightbox = document.getElementById('close-lightbox');
+  
 function showPage(page) {
   if (page === 'home') {
     content.innerHTML = `
@@ -74,6 +77,10 @@ function showPage(page) {
           const img = document.createElement('img');
           img.src = 'Photos/Isle of White/' + imgName;
           img.alt = imgName;
+          img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightbox.style.display = 'flex';
+          });
           gallery.appendChild(img);
         });
       })
@@ -99,6 +106,10 @@ function showPage(page) {
           const img = document.createElement('img');
           img.src = 'Photos/Best_Photos/' + imgName;
           img.alt = imgName;
+          img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightbox.style.display = 'flex';
+          });
           gallery.appendChild(img);
         });
       })
@@ -130,6 +141,21 @@ window.addEventListener('DOMContentLoaded', () => {
   const savedMode = localStorage.getItem('darkMode') === 'true';
   setDarkMode(savedMode);
 });
+
+closeLightbox.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
+
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = 'none';
+  }
+});
+
+lightboxImg.addEventListener('contextmenu', e => {
+  e.preventDefault();
+});
+  
 </script>
 <div id="lightbox">
   <span id="close-lightbox">&times;</span>
