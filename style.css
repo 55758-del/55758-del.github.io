@@ -278,3 +278,37 @@ footer p {
   font-size: 40px;
   cursor: pointer;
 }
+
+.image-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#prev-btn, #next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 10;
+}
+
+#prev-btn:hover,
+#next-btn:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+#prev-btn {
+  left: -60px;
+}
+
+#next-btn {
+  right: -60px;
+}
