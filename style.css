@@ -300,6 +300,15 @@ footer p {
   z-index: 10;
 }
 
+#image-counter {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: White;
+  font-size: 1rem;
+}
+
 #prev-btn:hover,
 #next-btn:hover {
   background: rgba(0,0,0,0.7);
