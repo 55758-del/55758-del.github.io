@@ -47,6 +47,8 @@
 
     <button id="next-btn">&#10095;</button>
 
+    <div id="image-counter"></div>
+    
     <div class="watermark">© George Harvey Photography</div>
   </div>
 </div>
@@ -57,6 +59,7 @@ const toggleButton = document.getElementById('mode-toggle');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const closeLightbox = document.getElementById('close-lightbox');
+const imageCounter = document.getElementById('image-counter');
 let currentImages = [];
 let currentIndex = 0;
   
@@ -138,6 +141,10 @@ function showPage(page) {
   }
 }
 
+function updateCounter() {
+  imageCounter.textContent = '${currentIndex + 1} / ${currentImages.length}';
+}
+
 function setDarkMode(enabled) {
   if (enabled) {
     document.body.classList.add('dark-mode');
@@ -189,22 +196,39 @@ document.addEventListener('dragstart', (e) => {
 function openLightbox(index) {
   currentIndex = index;
   lightboxImg.src = currentImages[currentIndex];
+  updateCounter();
   lightbox.style.display = 'flex';
 }
 
 function showNext() {
   currentIndex = (currentIndex + 1) % currentImages.length;
   lightboxImg.src = currentImages[currentIndex];
+  updateCounter();
 }
 
 function showPrev() {
   currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
   lightboxImg.src = currentImages[currentIndex];
+  updateCounter();
 }
 
 document.getElementById('next-btn').addEventListener('click', showNext);
 document.getElementById('prev-btn').addEventListener('click', showPrev);
 
+document.addEventListener('Keydown',(e) => { 
+  if (lightbox.style.display === 'flex') {
+    if (e.key === 'ArrowRight') {
+      shownNext();
+    }
+    if (e.key === 'ArrowLeft') {
+      shownPrev();
+    }
+    if (e.key === 'Escape') {
+      lightbox.style.display = 'none';
+    }
+  }
+};
+  
 </script>
 
 </body>
