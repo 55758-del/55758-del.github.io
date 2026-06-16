@@ -81,8 +81,8 @@ function showPage(page) {
   }
   else if (page === 'iOW') {
     content.innerHTML = `
-    <h2>Isle of White</h2>
-    <p>These are some of the photos I took in the Isle of White.</p>
+    <h2>Isle of Whight</h2>
+    <p>These are some of the photos I took in the Isle of Whight.</p>
     <section id="gallery">
       <h3>Photo Gallery</h3>
       <div class="gallery" id="gallery-container"></div>
@@ -142,7 +142,7 @@ function showPage(page) {
 }
 
 function updateCounter() {
-  imageCounter.textContent = '${currentIndex + 1} / ${currentImages.length}';
+  imageCounter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
 }
 
 function setDarkMode(enabled) {
@@ -215,19 +215,19 @@ function showPrev() {
 document.getElementById('next-btn').addEventListener('click', showNext);
 document.getElementById('prev-btn').addEventListener('click', showPrev);
 
-document.addEventListener('Keydown',(e) => { 
+document.addEventListener('keydown',(e) => { 
   if (lightbox.style.display === 'flex') {
     if (e.key === 'ArrowRight') {
-      shownNext();
+      showNext();
     }
     if (e.key === 'ArrowLeft') {
-      shownPrev();
+      showPrev();
     }
     if (e.key === 'Escape') {
       lightbox.style.display = 'none';
     }
   }
-};
+});
   
 </script>
 
